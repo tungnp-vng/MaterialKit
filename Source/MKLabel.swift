@@ -54,13 +54,14 @@ public class MKLabel: UILabel {
     }
     override public var bounds: CGRect {
         didSet {
+            println(self.bounds)
             mkLayer.superLayerDidResize()
         }
     }
     private lazy var mkLayer: MKLayer = MKLayer(superLayer: self.layer)
 
-    override public init() {
-        super.init()
+    public override init() {
+        super.init(frame: CGRectZero)
         setup()
     }
 
@@ -72,6 +73,10 @@ public class MKLabel: UILabel {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+    }
+    
+    public override func layoutSubviews() {
+        mkLayer.superLayerDidResize()
     }
 
     private func setup() {
@@ -86,8 +91,8 @@ public class MKLabel: UILabel {
         } else if rippleLocation == .TapLocation {
             rippleLocation = .Center
         }
-
-        mkLayer.animateScaleForCircleLayer(0.65, toScale: 1.0, timingFunction: rippleAniTimingFunction, duration: CFTimeInterval(aniDuration))
+        
+        mkLayer.animateScaleForCircleLayer(0.65, toScale: 1.5, timingFunction: rippleAniTimingFunction, duration: CFTimeInterval(aniDuration))
         mkLayer.animateAlphaForBackgroundLayer(backgroundAniTimingFunction, duration: CFTimeInterval(aniDuration))
     }
 

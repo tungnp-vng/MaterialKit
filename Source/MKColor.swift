@@ -15,26 +15,26 @@ extension UIColor {
         let blue = CGFloat((hex & 0xFF)) / 255.0
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
+}
 
-    public struct MKColor {
-        public static let Red = UIColor(hex: 0xF44336)
-        public static let Pink = UIColor(hex: 0xE91E63)
-        public static let Purple = UIColor(hex: 0x9C27B0)
-        public static let DeepPurple = UIColor(hex: 0x67AB7)
-        public static let Indigo = UIColor(hex: 0x3F51B5)
-        public static let Blue = UIColor(hex: 0x2196F3)
-        public static let LightBlue = UIColor(hex: 0x03A9F4)
-        public static let Cyan = UIColor(hex: 0x00BCD4)
-        public static let Teal = UIColor(hex: 0x009688)
-        public static let Green = UIColor(hex: 0x4CAF50)
-        public static let LightGreen = UIColor(hex: 0x8BC34A)
-        public static let Lime = UIColor(hex: 0xCDDC39)
-        public static let Yellow = UIColor(hex: 0xFFEB3B)
-        public static let Amber = UIColor(hex: 0xFFC107)
-        public static let Orange = UIColor(hex: 0xFF9800)
-        public static let DeepOrange = UIColor(hex: 0xFF5722)
-        public static let Brown = UIColor(hex: 0x795548)
-        public static let Grey = UIColor(hex: 0x9E9E9E)
-        public static let BlueGrey = UIColor(hex: 0x607D8B)
-    }
+public struct MKColor {
+    public static var MKRed = UIColor(hex: 0xF44336)
+    public static var MKPink = UIColor(hex: 0xE91E63)
+    public static var MKPurple = UIColor(hex: 0x9C27B0)
+    public static var MKDeepPurple = UIColor(hex: 0x67AB7)
+    public static var MKIndigo = UIColor(hex: 0x3F51B5)
+    public static var MKBlue = UIColor(hex: 0x2196F3)
+    public static var MKLightBlue = UIColor(hex: 0x03A9F4)
+    public static var MKCyan = UIColor(hex: 0x00BCD4)
+    public static var MKTeal = UIColor(hex: 0x009688)
+    public static var MKGreen = UIColor(hex: 0x4CAF50)
+    public static var MKLightGreen:UIColor = UIColor(hex: 0x8BC34A)
+    public static var MKLime = UIColor(hex: 0xCDDC39)
+    public static var MKYellow = UIColor(hex: 0xFFEB3B)
+    public static var MKAmber = UIColor(hex: 0xFFC107)
+    public static var MKOrange = UIColor(hex: 0xFF9800)
+    public static var MKDeepOrange = UIColor(hex: 0xFF5722)
+    public static var MKBrown = UIColor(hex: 0x795548)
+    public static var MKGrey = UIColor(hex: 0x9E9E9E)
+    public static var MKBlueGrey = UIColor(hex: 0x607D8B)
 }

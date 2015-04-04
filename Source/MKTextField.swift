@@ -61,7 +61,7 @@ public class MKTextField : UITextField {
             if bottomBorderEnabled {
                 bottomBorderLayer = CALayer()
                 bottomBorderLayer?.frame = CGRect(x: 0, y: layer.bounds.height - 1, width: bounds.width, height: 1)
-                bottomBorderLayer?.backgroundColor = UIColor.MKColor.Grey.CGColor
+                bottomBorderLayer?.backgroundColor = MKColor.MKGrey.CGColor
                 layer.addSublayer(bottomBorderLayer)
             }
         }
