@@ -11,7 +11,7 @@ import UIKit
 public class MKLabel: UILabel {
     @IBInspectable public var maskEnabled: Bool = true {
         didSet {
-            mkLayer.enableMask(enable: maskEnabled)
+            mkLayer.enableMask(maskEnabled)
         }
     }
     @IBInspectable public var rippleLocation: MKRippleLocation = .TapLocation {
@@ -54,7 +54,7 @@ public class MKLabel: UILabel {
     }
     override public var bounds: CGRect {
         didSet {
-            println(self.bounds)
+            print(self.bounds, terminator: "")
             mkLayer.superLayerDidResize()
         }
     }
@@ -64,7 +64,7 @@ public class MKLabel: UILabel {
         self.init(frame: CGRectZero)
     }
 
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -73,6 +73,10 @@ public class MKLabel: UILabel {
         super.init(frame: frame)
         setup()
     }
+
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     public override func layoutSubviews() {
         mkLayer.superLayerDidResize()
@@ -95,11 +99,11 @@ public class MKLabel: UILabel {
         mkLayer.animateAlphaForBackgroundLayer(backgroundAniTimingFunction, duration: CFTimeInterval(aniDuration))
     }
 
-    override public func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-        if let firstTouch = touches.first as? UITouch {
+        if let firstTouch = touches.first{
             let location = firstTouch.locationInView(self)
-            animateRipple(location: location)
+            animateRipple(location)
         }
     }
 }
